@@ -69,9 +69,10 @@ class EasyLoadingContainerState extends State<EasyLoadingContainer>
     super.initState();
     if (!mounted) return;
     _status = widget.status;
-    _alignment = (widget.indicator == null && widget.status?.isNotEmpty == true)
-        ? EasyLoadingTheme.alignment(widget.toastPosition)
-        : AlignmentDirectional.center;
+    _alignment = EasyLoading.instance.alignment ??
+        ((widget.indicator == null && widget.status?.isNotEmpty == true)
+            ? EasyLoadingTheme.alignment(widget.toastPosition)
+            : AlignmentDirectional.center);
     _dismissOnTap =
         widget.dismissOnTap ?? (EasyLoadingTheme.dismissOnTap ?? false);
     _ignoring =

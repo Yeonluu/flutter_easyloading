@@ -148,6 +148,9 @@ class EasyLoading {
   /// animation duration of indicator, default 200ms.
   late Duration animationDuration;
 
+  /// loading alignment, default [null].
+  AlignmentGeometry? alignment;
+
   /// loading custom animation, default null.
   EasyLoadingAnimation? customAnimation;
 
